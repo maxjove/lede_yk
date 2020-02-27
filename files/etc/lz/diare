@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# Copyright (C) 2007 OpenWrt.org
+#
+#
+
+   begin=$(date --date="01:40" +%s)
+   end=$(date --date="05:00" +%s)
+   now=$(date +%s)
+        
+ 
+ 
+ #/etc/lz/CheckDns 2>/dev/null
+
+  
+  if [ `ping  www.qq.com -c 15 | grep -c "64 bytes from"`  -gt 0 ] ; then  
+    {
+       j=`ifconfig|grep -c inet.*P-t-P`
+
+       logger "`date` [$j] dial connection  ok"
+       echo "`date` [$j] dial connection  ok"
+       
+    
+       let k=`cat /etc/config/network | grep -c "proto 'pppoe'"`-2      
+       if [ "$begin" -le "$now" -a "$now" -le "$end" ]; then
+              {
+                #/etc/lz/sendmailmsg  "`date`\n `uptime`\n `/etc/lz/getipadr -i`\n [$j] dial connection  ok \n `logread` \n"
+                #! [ "$j" -ge "$k" ] && /etc/lz/sendmailmsg "[syncppp] [$j] dial succeed, less than the the set [$k] dial, and will reboot to retry!" 
+                ! [ "$j" -ge "$k" ] && echo "[syncppp] [$j] dial succeed, less than the the set [$k] dial, and will reboot to retry!"  && killall -q  pppd
+                
+               }
+             else
+              {
+                 
+                 ! [ "$j" -ge "$k" ] && /etc/lz/sendmailmsg "[syncppp] [$j] dial succeed, less than the the set [$k] dial!" 
+              }
+      fi 
+
+      
+    }
+  else
+    {
+                     
+          if [ `ping 218.30.19.50 -c 10 | grep -c "64 bytes from"`  -le 0 ] ; then  
+
+            if [ "$begin" -le "$now" -a "$now" -le "$end" ]; then
+              {
+             
+               logger "`date` connection RESTART"
+               #/etc/lz/sendmailmsg  "`date` connection  RESTART"
+                sleep 5 && touch /etc/banner && reboot               }
+             else
+              {
+                 logger "`date` connection is not ok"
+                 #/etc/lz/sendmailmsg  "`date` connection  is not ok"
+                 killall -q  pppd
+
+              }
+            fi 
+                      
+          fi
+    } 
+  fi
+
+exit 0

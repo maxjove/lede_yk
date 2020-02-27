@@ -1,0 +1,35 @@
+#!/bin/sh
+#Convert Python Fetion To Shell @2012
+
+
+   begin=$(date --date="06:30" +%s)
+   end=$(date --date="23:59" +%s)
+   now=$(date +%s)
+   
+  msgtmp=$1 
+  if [ $# -ge 1 ]; then
+     {
+     
+      msgtmp=$1
+     }
+    else
+        {
+        read  -p "please enter :" msgtmp
+        }
+    fi
+
+ if [ "$begin" -le "$now" -a "$now" -le "$end" ]; then
+     {
+        
+        echo "${msgtmp}"|/etc/lz/sendmailmsg 
+        echo "${msgtmp}"|/etc/lz/fetion.sh
+        
+
+     }
+  else
+    {
+       echo "${msgtmp}"|/etc/lz/sendmailmsg 
+    }
+   
+ fi
+exit 0

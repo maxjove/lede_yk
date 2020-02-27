@@ -1,0 +1,26 @@
+
+config ddns 'global'
+	option ddns_dateformat '%F %R'
+	option ddns_loglines '250'
+	option upd_privateip '0'
+
+config service 'changeip'
+	option service_name 'changeip.com'
+	option enabled '1'
+	option username 'maxjove@gmail.com'
+	option password 'jovemax'
+	option interface 'vwan1'
+	option ip_network 'vwan1'
+	option lookup_host 'maxjove.x24hr.com'
+	option domain 'maxjove.x24hr.com'
+
+config service 'oray'
+	option service_name 'oray.com'
+	option lookup_host 'mxopenwrt.imwork.net'
+	option username 'maxjove'
+	option password 'jovemax115'
+	option interface 'vwan1'
+	option ip_network 'vwan1'
+	option enabled '1'
+	option domain 'mxopenwrt.imwork.net'
+

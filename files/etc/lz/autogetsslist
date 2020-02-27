@@ -1,0 +1,69 @@
+#!/bin/sh
+
+dirname=/etc/
+dirtmpname=/tmp/
+filename=/etc/chinadns_chnroute.txt
+bakfilename=/tmp/chinadns_chnroute.txt
+
+filectime=`stat -c %Y $filename`
+nowtime=`date +%s`
+#echo $(($nowtime - $filectime))
+timespin=$(expr $(($nowtime - $filectime)) / 3600)
+#echo timespin=${timespin}H
+rm -rf $bakfilename
+mv -f $filename $dirtmpname
+if [ $timespin -ge 24 ] || [ -f "/etc/lz/autochinadns" ]
+then 
+  #mv $filename  $bakfilename
+  wget --tries=60 -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | \
+    awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > \
+    $filename
+
+  if  [  ! -s $filename  -a -e $filename ]
+  then
+          echo '/etc/chinadns_chnroute.txt is null'
+          rm -rf $filename
+          mv -f $bakfilename  $dirname
+  fi
+
+  if [ -s $filename ]
+  then
+
+   rm -rf $bakfilename
+
+   
+   
+  fi
+#sed -i -e "/8.8.8.8/d" $filename 
+#sed -i -e "/8.8.4.4/d" $filename
+#sed -i -e "/208.67.222.222/d" $filename
+
+
+#sed -i -e "/8.8.8.8/d" $filename 
+#echo '8.8.8.8' >> $filename
+#echo '8.8.4.4' >> $filename
+#echo '208.67.222.222' >> $filename
+#echo '208.67.220.220' >> $filename
+sed -i -e "/108.61.127.118/d" $filename
+echo '108.61.127.118' >> $filename
+sed -i -e "/133.130.103.149/d" $filename
+echo '133.130.103.149' >> $filename
+sed -i -e "/208.67.222.222/d" $filename
+echo '208.67.222.222' >> $filename
+sed -i -e "/208.67.220.220/d" $filename
+echo '208.67.220.220' >> $filename
+ if pidof redsocks2>/dev/null; then
+      /etc/init.d/redsocks2 restart
+      logger "`date` AutoUpdate ignore.list!"
+    fi
+
+   if pidof chinadns>/dev/null; then
+      /etc/init.d/chinadns restart
+      logger "`date` AutoUpdate ignore.list chinadns restart!!"
+   fi
+else 
+   echo "$filename is not expri 24h! Not need update !!!"
+   logger "$filename is not expri 24h! Not need update !!!"
+fi
+
+exit 0

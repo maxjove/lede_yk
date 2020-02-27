@@ -1,0 +1,23 @@
+#!/bin/sh
+# qiyulin to monitor used CPU
+record=0
+#while true;
+#do
+cpu=$(top -b -n1 | grep "logd" | head -1 | awk '{print $7}')
+pid=$(top -b -n1 | grep "logd" | head -1 | awk '{print $1}')
+#cpu check
+echo $cpu
+echo $pid
+result=${cpu/.*}
+echo $result
+if [[ $record == $pid ]];then  /etc/init.d/log restart ;logger "$pid was restart";fi
+if [[ $result > 10 || $result == 100 ]];then let record=${pid};else let record=0;fi
+#echo
+logger `date`+" cpu:$result% record pid:$record pid:$pid" 
+#sleep 60
+#done
+
+        
+
+ 
+

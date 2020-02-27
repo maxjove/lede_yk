@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Copyright (C) 2007 OpenWrt.org
+#
+#
+
+  n_wanok=$( ifconfig|grep -c inet.*P-t-P )
+  
+  #[ "$n_wanok" -ge "1" ] && echo $n_wanok
+  n_mwan3ok=$(mwan3 interfaces | grep -c "Interface wan.*is online")
+  
+  #echo $n_wanok $n_mwan3ok 
+  #logger $n_wanok $n_mwan3ok 
+  if [ $n_wanok -gt  $n_mwan3ok  ] ; then  
+    {
+       
+       logger "wan:${n_wanok} mwan3:${n_mwan3ok} $n_wanok > $n_mwan3ok ,mwan3 restart"  
+       echo "wan:${n_wanok} mwan3:${n_mwan3ok} $n_wanok > $n_mwan3ok ,mwan3 restart"  &&  mwan3 restart >/dev/null 2>&1
+
+    }
+  else
+    {
+       logger "wan:${n_wanok} mwan3:${n_mwan3ok} All wans on mwan3 ok,   exit..."
+       echo "wan:${n_wanok} mwan3:${n_mwan3ok} All wans on mwan3 ok,   exit..." && exit 0
+
+    } 
+  fi 
+

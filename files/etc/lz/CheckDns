@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Copyright (C) 2007 OpenWrt.org
+#
+#
+
+        
+
+ 
+if [ `ping www.qq.com -c 10 | grep -c "64 bytes from"`  -gt 0 ] ; then  
+ 
+  logger "DNS lookup ok!"
+   
+else
+{
+
+
+
+   if pidof chinadns>/dev/null; then
+      /etc/init.d/chinadns stop
+      /etc/init.d/chinadns start
+      logger "`date` AutoUpdate ignore.list chinadns restart!!"
+   fi
+
+}
+fi
+
+
+URL="http://mxopen.wicp.net/"
+#URL="https://www.youtube.com/"
+#获取http响应代码 
+HTTP_CODE=`curl -o /dev/null -s -w "%{http_code}" "${URL}"` 
+echo $HTTP_CODE
+
+#服务器能正常响应，应该返回200的代码 
+if [ $HTTP_CODE != 200 -a $HTTP_CODE != 403 ];then 
+#重启服务 
+  echo "phddns2  restart"
+  /etc/init.d/phddns2 restart
+fi
+rm -f /etc/lz/.log

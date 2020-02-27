@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Copyright (C) 2007 OpenWrt.org
+#
+#
+#fetch the mail!
+
+rm -rf /tmp/cmdline
+rm -rf /tmp/spool/mail/root
+fetchmail -v -f /etc/myFetch
+
+#
+abc=$( grep -c "Subject: !" /tmp/spool/mail/root)  #获取邮件主题的数目，                            
+if [ $abc -ne 0 ]        #如果主题数目不是0则
+        then 
+                                                           
+         cat /tmp/spool/mail/root |grep "Subject: !"| sed  -e 's/Subject: !#//g' >/tmp/cmdline   #把主题行并以！开头的主题提取出来        
+         echo "exit 0" >>/tmp/cmdline
+         rm /tmp/spool/mail/root #邮件存储文件删掉防止多次命令互相影响
+        chmod 0700 /tmp/cmdline
+                                                  
+       /tmp/cmdline      #最后对发送的不是上面的代码的实体命令执行                                                    
+        exit 1                                                                  
+else                                                                                                                                              
+       exit 0                                                                  
+                                                                        
+fi
+

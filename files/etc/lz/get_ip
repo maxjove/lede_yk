@@ -1,0 +1,67 @@
+#!/bin/sh
+
+echo 'starting auto get ss_ip.....'
+OLDSSIP=`uci get redsocks2.@redsocks2[0].proxy_ip`
+echo "OLDIP:${OLDSSIP}"
+if [ `ping  ${OLDSSIP} -c 5 | grep -c "64 bytes from"`  -le 0 ] ; then  
+{
+  ip2=`nslookup tw.ukoi.win 208.67.222.222 | awk 'NR==5 { print $3 }'`
+  ip1=`nslookup one.asia.ukoi.win 208.67.222.222 | awk 'NR==5 { print $3 }'`
+  ip3=`nslookup asia-2.ukoi.win 208.67.222.222 | awk 'NR==5 { print $3 }'`
+
+  if [ `ping  ${ip2} -c 5 | grep -c "64 bytes from"`  -gt 0 ] ; then  
+    {
+      #TMPSTR=`ping tw.ukoi.win -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
+      uci set redsocks2.@redsocks2[0].proxy_ip=${ip2}
+      uci set redsocks2.@redsocks2[0].proxy_ip=${ip2}
+      uci commit redsocks2
+      #if pidof redsocks2>/dev/null; then
+      /etc/init.d/redsocks2 restart
+      logger "`date` AutoSet Redsocks tw.ukoi.win ip=${ip2}"
+      echo "`date` AutoSet Redsocks tw.ukoi.win ip=${ip2}"
+      /etc/lz/sendmailmsg "`date` AutoSet Redsocks tw.ukoi.win ip=${ip2}"
+     #fi
+
+    }
+   elif [ `ping  ${ip1} -c 5 | grep -c "64 bytes from"`  -gt 0 ] ; then  
+    {
+      #TMPSTR=`ping one.asia.ukoi.win -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
+      uci set redsocks2.@redsocks2[0].proxy_ip=${ip1}
+      uci redsocks2.@redsocks2[0].proxy_ip=${ip1}
+      uci commit redsocks2
+      #if pidof redsocks2>/dev/null; then
+        /etc/init.d/redsocks2 restart
+        logger "`date` AutoSet Redsocks one.asia.ukoi.win ip=${ip1}"
+        echo "`date` AutoSet Redsocks one.asia.ukoi.win ip=${ip1}"
+        /etc/lz/sendmailmsg "`date` AutoSet Redsocks one.asia.ukoi.win ip=${ip1}"
+      #fi
+
+    }
+    elif [ `ping  ${ip3} -c 5 | grep -c "64 bytes from"`  -gt 0 ] ; then  
+    {
+      #TMPSTR=`ping one.asia.ukoi.win -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
+      uci redsocks2.@redsocks2[0].proxy_ip=${ip1}
+      uci redsocks2.@redsocks2[0].proxy_ip=${ip1}
+      uci commit redsocks2
+      #if pidof redsocks2>/dev/null; then
+        /etc/init.d/redsocks2 restart
+        logger "`date` AutoSet Redsocks asia-2.ukoi.win ip=${ip1}"
+        echo "`date` AutoSet Redsocks asia-2.ukoi.win ip=${ip1}"
+        /etc/lz/sendmailmsg "`date` AutoSet Redsocks asia-1.ukoi.win ip=${ip1}"
+      #fi
+
+    }
+
+    fi
+
+    
+
+}
+else
+{
+  echo "OLDIP:${OLDSSIP} is ok ,not need set ss ip! "
+  logger "OLDIP:${OLDSSIP} is ok ,not need set ss ip! "
+  /etc/lz/sendmailmsg "OLDIP:${OLDSSIP} is ok ,not need set ss ip! "
+}
+fi
+  
