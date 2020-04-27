@@ -10,8 +10,22 @@ echo $cpu
 echo $pid
 result=${cpu/.*}
 echo $result
-if [[ $record == $pid ]];then  /etc/init.d/log restart ;logger "$pid was restart";fi
-if [[ $result > 10 || $result == 100 ]];then let record=${pid};else let record=0;fi
+echo  ${cpu%%%}
+#if [[ $record == $pid ]];then  
+if [[ ${cpu%%%} -gt 15 ]];then 
+/etc/init.d/log restart ;
+/etc/init.d/shadowsocksr restart ;
+echo "shadowsocksr  resart"
+logger  "shadowsocksr  resart"
+echo "$pid was restart";
+logger "$pid was restart";
+echo $result
+fi
+
+#if [[ $result > 10 || $result == 100 ]];then 
+#let record=${pid};else let record=0;
+#fi
+
 #echo
 logger `date`+" cpu:$result% record pid:$record pid:$pid" 
 #sleep 60
