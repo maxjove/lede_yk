@@ -27,7 +27,7 @@ fi
 #fi
 
 #echo
-logger `date`+" cpu:$result% record pid:$record pid:$pid" 
+logger " loged cpu:$cpu pid:$pid " 
 #sleep 60
 #done
 
