@@ -121,7 +121,6 @@ config servers
 config servers
 	option alias '[AAEX-标准订阅 (120GB)] 香港极速五号'
 	option auth_enable '0'
-	option switch_enable '1'
 	option type 'ssr'
 	option server 'hk-5.crhnode.top'
 	option server_port '3530'
@@ -135,6 +134,7 @@ config servers
 	option kcp_enable '0'
 	option kcp_port '0'
 	option kcp_param '--nocomp'
+	option switch_enable '0'
 
 config servers
 	option alias '[AAEX-标准订阅 (120GB)] 日本极速一号'
@@ -1045,9 +1045,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继01 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继01 华南'
 
 config servers
 	option type 'ssr'
@@ -1061,9 +1061,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继02 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继02 华南'
 
 config servers
 	option type 'ssr'
@@ -1077,10 +1077,10 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继03 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
-	option ip '125.46.40.166'
+	option alias '[AAEX] 日本 中继03 华南'
+	option ip '183.240.139.189'
 
 config servers
 	option type 'ssr'
@@ -1094,9 +1094,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继04 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继04 华南'
 
 config servers
 	option type 'ssr'
@@ -1110,9 +1110,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继05 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继05 华南'
 
 config servers
 	option type 'ssr'
@@ -1126,9 +1126,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继06 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继06 华南'
 
 config servers
 	option type 'ssr'
@@ -1142,9 +1142,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继07 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继07 华南'
 
 config servers
 	option type 'ssr'
@@ -1158,9 +1158,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继08 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继08 华南'
 
 config servers
 	option type 'ssr'
@@ -1174,9 +1174,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继09 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继09 华南'
 
 config servers
 	option type 'ssr'
@@ -1190,9 +1190,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 日本 中继10 华中'
 	option server 'cn-3.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 日本 中继10 华南'
 
 config servers
 	option type 'ssr'
@@ -1206,9 +1206,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继01 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继01 华南'
 
 config servers
 	option type 'ssr'
@@ -1222,9 +1222,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继02 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继02 华南'
 
 config servers
 	option type 'ssr'
@@ -1238,9 +1238,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继03 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继03 华南'
 
 config servers
 	option type 'ssr'
@@ -1254,9 +1254,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继04 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继04 华南'
 
 config servers
 	option type 'ssr'
@@ -1270,9 +1270,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继05 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继05 华南'
 
 config servers
 	option type 'ssr'
@@ -1286,9 +1286,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继06 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继06 华南'
 
 config servers
 	option type 'ssr'
@@ -1302,9 +1302,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继07 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继07 华南'
 
 config servers
 	option type 'ssr'
@@ -1318,9 +1318,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继08 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继08 华南'
 
 config servers
 	option type 'ssr'
@@ -1334,9 +1334,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继09 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继09 华南'
 
 config servers
 	option type 'ssr'
@@ -1350,9 +1350,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 美国 中继10 华东'
 	option server 'cn-4.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 美国 中继10 华南'
 
 config servers
 	option type 'ssr'
@@ -1366,9 +1366,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 香港 特选01 华东'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 香港 特选01 华南'
 
 config servers
 	option type 'ssr'
@@ -1382,9 +1382,9 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 韩国 特选02 华东'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
+	option alias '[AAEX] 韩国 特选02 华南'
 
 config servers
 	option type 'ssr'
@@ -1400,7 +1400,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 德国 特选04 华东'
+	option alias '[AAEX] 德国 特选03 华南'
 
 config servers
 	option type 'ssr'
@@ -1416,7 +1416,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 法国 特选05 华东'
+	option alias '[AAEX] 法国 特选04 华南'
 
 config servers
 	option type 'ssr'
@@ -1432,7 +1432,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 英国 特选06 华东'
+	option alias '[AAEX] 英国 特选05 华南'
 
 config servers
 	option type 'ssr'
@@ -1448,7 +1448,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 瑞士 特选07 华东'
+	option alias '[AAEX] 瑞士 特选06 华南'
 
 config servers
 	option type 'ssr'
@@ -1464,23 +1464,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 爱尔兰 特选08 华东'
-
-config servers
-	option type 'ssr'
-	option protocol 'origin'
-	option local_port '1234'
-	option kcp_param '--nocomp'
-	option server_port '560'
-	option grouphashkey 'c9f24f90d016f81f79a893e925d3da3b'
-	option password 'AAEXNETWORKTECHNOLOGYLTD20170715'
-	option hashkey '907bd7d27fa2ec41358948090daefa7a'
-	option encrypt_method 'rc4-md5'
-	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
-	option obfs 'http_simple'
-	option server 'cn-5.crhnode.top'
-	option switch_enable '1'
-	option alias '[AAEX] 俄罗斯 特选09 华中'
+	option alias '[AAEX] 爱尔兰 特选07 华南'
 
 config servers
 	option type 'ssr'
@@ -1496,7 +1480,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 加拿大 特选10 华中'
+	option alias '[AAEX] 加拿大 特选9 华南'
 
 config servers
 	option type 'ssr'
@@ -1512,23 +1496,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 新加坡 特选11 华东'
-
-config servers
-	option type 'ssr'
-	option protocol 'origin'
-	option local_port '1234'
-	option kcp_param '--nocomp'
-	option server_port '546'
-	option grouphashkey 'c9f24f90d016f81f79a893e925d3da3b'
-	option password 'AAEXNETWORKTECHNOLOGYLTD20170715'
-	option hashkey '42135bc7427936ba23a43d5af921083d'
-	option encrypt_method 'rc4-md5'
-	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
-	option obfs 'http_simple'
-	option server 'cn-2.crhnode.top'
-	option switch_enable '1'
-	option alias '[AAEX] 土耳其 特选12 华东'
+	option alias '[AAEX] 新加坡 特选10 华南'
 
 config servers
 	option type 'ssr'
@@ -1544,23 +1512,7 @@ config servers
 	option obfs 'http_simple'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
-	option alias '[AAEX] 澳大利亚 特选13 华东'
-
-config servers
-	option type 'ssr'
-	option protocol 'origin'
-	option local_port '1234'
-	option kcp_param '--nocomp'
-	option server_port '537'
-	option grouphashkey 'c9f24f90d016f81f79a893e925d3da3b'
-	option password 'AAEXNETWORKTECHNOLOGYLTD20170715'
-	option hashkey '0356277b5ad9fa083e4fd4dcd3ac6757'
-	option encrypt_method 'rc4-md5'
-	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
-	option obfs 'http_simple'
-	option alias '[AAEX] 杭州 回国 香港(仅海外使用)'
-	option server 'back-1.crhnode.top'
-	option switch_enable '1'
+	option alias '[AAEX] 澳大利亚 特选11 华南'
 
 config servers
 	option type 'ssr'
@@ -1574,7 +1526,7 @@ config servers
 	option encrypt_method 'rc4-md5'
 	option obfs_param '3530-z2P682Rwun.download.microsoft.com'
 	option obfs 'http_simple'
-	option alias '[AAEX] 越南 特选03 华东'
+	option alias '[AAEX] 俄罗斯 特选08 华南'
 	option server 'cn-2.crhnode.top'
 	option switch_enable '1'
 
