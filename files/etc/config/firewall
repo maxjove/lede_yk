@@ -303,17 +303,6 @@ config redirect
 	option name '121_17221'
 	option enabled '0'
 
-config include 'zerotier'
-	option type 'script'
-	option path '/etc/zerotier.start'
-	option reload '1'
-
-config include 'miniupnpd'
-	option type 'script'
-	option path '/usr/share/miniupnpd/firewall.include'
-	option family 'any'
-	option reload '1'
-
 config include 'ipsecd'
 	option type 'script'
 	option path '/etc/ipsec.include'
@@ -345,6 +334,17 @@ config rule 'esp'
 	option src 'wan'
 	option proto 'esp'
 
+config include 'zerotier'
+	option type 'script'
+	option path '/etc/zerotier.start'
+	option reload '1'
+
+config include 'miniupnpd'
+	option type 'script'
+	option path '/usr/share/miniupnpd/firewall.include'
+	option family 'any'
+	option reload '1'
+
 config rule 'kms'
 	option name 'kms'
 	option target 'ACCEPT'
@@ -366,4 +366,14 @@ config include 'mia'
 	option type 'script'
 	option path '/etc/mia.include'
 	option reload '1'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '5055'
+	option dest_ip '192.168.20.141'
+	option dest_port '5055'
+	option name 'dsm5055'
 
