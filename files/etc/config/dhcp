@@ -43,7 +43,7 @@ config host
 	option name 'dsm'
 	option dns '1'
 	option ip '192.168.20.141'
-	option mac '00:11:32:2f:a9:85'
+	option mac '00:11:32:33:2d:75'
 
 config host
 	option name 'SVR2016-EX'
