@@ -16,7 +16,7 @@
 #mkdir package/base-files/files/config
 #echo 0xDEADBEEF > package/base-files/files/config/google_fu_mode
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-sed -i '$a src-git luci-app-serverchan https://github.com/tty228/luci-app-serverchan' feeds.conf.default
-sed -i '$a src-git node-request https://github.com/jerrykuku/node-request'  feeds.conf.default
-sed -i '$a src-git luci-app-jd-dailybonus https://github.com/jerrykuku/luci-app-jd-dailybonus'  feeds.conf.default
+sed -i '$a src-git serverchan https://github.com/tty228/luci-app-serverchan' feeds.conf.default
+sed -i '$a src-git noderequest https://github.com/jerrykuku/node-request'  feeds.conf.default
+sed -i '$a src-git jddailybonus https://github.com/jerrykuku/luci-app-jd-dailybonus'  feeds.conf.default
 #./scripts/feeds update -a && ./scripts/feeds install -a
