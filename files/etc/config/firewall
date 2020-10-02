@@ -334,6 +334,16 @@ config rule 'esp'
 	option src 'wan'
 	option proto 'esp'
 
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '5055'
+	option dest_ip '192.168.20.141'
+	option dest_port '5055'
+	option name 'dsm5055'
+
 config include 'zerotier'
 	option type 'script'
 	option path '/etc/zerotier.start'
@@ -368,12 +378,13 @@ config include 'mia'
 	option reload '1'
 
 config redirect
+	option enabled '1'
 	option target 'DNAT'
 	option src 'wan'
 	option dest 'lan'
 	option proto 'tcp udp'
-	option src_dport '5055'
+	option name 'frps141_7000'
+	option src_dport '7900'
 	option dest_ip '192.168.20.141'
-	option dest_port '5055'
-	option name 'dsm5055'
+	option dest_port '7000'
 
