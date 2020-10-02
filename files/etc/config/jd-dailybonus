@@ -1,0 +1,13 @@
+
+config global
+	option auto_run '1'
+	option auto_update '1'
+	option stop '0'
+	option failed '0'
+	option remote_url 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
+	option cookie 'shshshfpa=f750a073-b63e-00ba-35b0-535bc3153702-1561539386; shshshfpb=rll5qzI1ijn%2FRjerJYdu71Q%3D%3D; pinId=L6MFP60_cNo; __jdu=1561539386712537859952; TrackID=10li20D0i-wpnJtKjqAeegNB2sg9RSreXfeBwdzV9yjPtCBOw4ma-iTBZaPdjqwCdC1SQuLvbG7rNpj-yMGJ1-ubnniUrXhVf0rzghEB97lw; pin=maxjove; unick=JoveLeon; _tp=AMQGOdm2aseJlEqZrecrCA%3D%3D; _pst=maxjove; unpl=V2_ZzNtbURSFxNxABYBeBhfDGJQEwpLVhMddFoUBngdDABnBUEJclRCFnQUR11nGVgUZAEZXEFcQxdFCEdkeR5eA24zG1tKUkEUGzhHVX1NDAFgUBBVSlATHXddQFcrEGwGZzMTbUJTRBVxCk5Wch5aBWQHEFtLU0sdcQt2ZHsRWDVXWEczRV4WFX0OQQd6TlsBZTMSWUZSRRZxCEJUSxhsBFdIfFwPV0cSdQxEXHkQWwNnABZfRF5HHX0MRWR6KV8%3d; user-key=a52ccc71-d0b5-4c14-acde-b647c2ad98ed; __jdv=76161171|direct|-|none|-|1599184908943; cn=39; 3AB9D23F7A4B3C9B=CXMSOEQ6JMQHIAITT22PTNGSHENOQJA67X6WOPPGJ74S6JWOFNDOXVPCQZPRG4TYERSM7U32GPSBU267ZHD5UWUHWE; mba_muid=1561539386712537859952; shshshfp=6a0f5028d9ab029694b765df95e84913; jcap_dvzw_fp=2590802499f92e8807be2b31fe9a4250$852771977040; TrackerID=sayVhHG82j6d4V_bHAIBIHcHUs4Xfj2rBQjiQZ4qo33SRYKbFRtTh_7-QXtcUBZFEqMM6uaLq3SlYg7G6SpNSEIOi7fe5lwgk-Goj844V1A; pt_key=AAJfXkOqADBrwbt0Qr3220fKBwhhmKN5sB3t89H6ZTkUO5vF7Vuyw2Hy1q7Q19svxvTebzoBi08; pt_pin=maxjove; pt_token=9xadgaw1; pwdt_id=maxjove; __jdc=122270672; mobilev=html5; __jda=122270672.1561539386712537859952.1561539387.1600081303.1600083812.65; __jdb=122270672.1.1561539386712537859952|65.1600083812; mba_sid=16000838121926421420880925721.1; __jd_ref_cls=Mnpm_ComponentApplied; '
+	option serverchan 'SCU20274Tf9d9fa164cacaec66927beedde4aa78a5a5ee6124f449'
+	option auto_update_time '1'
+	option auto_run_time '1'
+	option version '1.65'
+
