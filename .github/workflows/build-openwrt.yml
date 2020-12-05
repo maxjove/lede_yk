@@ -1,9 +1,4 @@
 #=================================================
-                                                     
- 
-                                                        
-                                    
- 
 # https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
@@ -39,7 +34,6 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
-                       
   TZ: Asia/Shanghai
 
 jobs:
@@ -204,40 +198,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-                                                                                  
-
-                                
-             
-                                                      
-            
-                                                                      
-                         
-                                                                                                                        
-                                                                                                                     
-                                                
-
-                                      
-                                          
-                                                               
-          
-                                                 
-           
-                                                      
-                              
-                                    
-
-                                
-                                                
-           
-                      
-                            
-
-                               
-                                                     
-                                                      
-           
-                      
-                         
-          
-                                                 
-
+                                                                                
