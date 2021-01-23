@@ -72,7 +72,6 @@ jobs:
         cd package/lean
         git clone https://github.com/tty228/luci-app-serverchan.git 
         git clone https://github.com/jerrykuku/node-request.git
-        git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
         cd ..
         cd ..
         $GITHUB_WORKSPACE/$DIY_P1_SH
