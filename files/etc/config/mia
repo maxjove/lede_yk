@@ -1,0 +1,31 @@
+
+config basic
+	option enable '1'
+	option strict '1'
+
+config macbind
+	option enable '1'
+	option z1 '1'
+	option z2 '1'
+	option z3 '1'
+	option z4 '1'
+	option z7 '1'
+	option macaddr 'F8:E7:A0:BD:98:FB'
+	option timeon '22:00'
+	option z5 '0'
+	option z6 '0'
+	option timeoff '0:59'
+
+config macbind
+	option enable '1'
+	option z1 '1'
+	option z2 '1'
+	option z3 '1'
+	option z4 '1'
+	option z7 '1'
+	option macaddr '00:E0:4C:68:11:F3'
+	option z5 '0'
+	option z6 '0'
+	option timeon '21:30'
+	option timeoff '0:59'
+
